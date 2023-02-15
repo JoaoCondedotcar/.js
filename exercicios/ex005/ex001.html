@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Multas</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            text-decoration: underline 3px;
+        }
+        input {
+            text-align: center;
+            display: block;
+            margin: 10px auto 10px auto;
+        }
+        input#button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input#button:hover {
+            color: black;
+            background-color: rgb(206, 206, 206);
+            border: 1px solid rgb(206, 206, 206);
+            transition: 0.5s;
+        }
+        p#velp {
+            text-align: center;
+        }
+        div#res {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema online de multas em km/h</h1>
+    <input type="number" name="txtvel" id="txtvel" placeholder="Sua velocidade">
+    <input type="number" name="txtmaxvel" id="txtmaxvel" placeholder="Velocidade permitida">
+    <input type="button" id="button" value="Verificar">
+    <div id="res">
+        <p>Resultado</p>
+    </div>
+    <script>
+        var txtv = window.document.getElementById('txtvel')
+        var txtmaxvel = window.document.getElementById('txtmaxvel')
+        var button = window.document.getElementById ('button')
+        button.addEventListener ('click', calc)
+        var res = window.document.getElementById ('res')
+        function calc() {
+            var vel = Number(txtv.value)
+            var maxvel = Number(txtmaxvel.value)
+            res.innerHTML = `<p id='velp'>Sua velocidade é de ${vel}km/h</p>`
+            if (vel > maxvel) {
+                res.innerHTML += `<p id='velp'>Você estava a ${vel}km/h e por conta disso ultrapassou a velocidade permitida de ${maxvel}km/h em ${((vel/maxvel)*100)-100}%, consulte o valor da multa na tabela.</p>`
+            } else {
+                res.innerHTML +=`<p id='velp'>Obrigado por respeitar as leis de trânsito!`
+            }
+            res.innerHTML += `<p id='velp'> Dirija sempre com cuidado e usando o cinto de segurança!<p>`
+        }
+    </script>
+</body>
+</html>

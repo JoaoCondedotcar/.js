@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: yellow;
+            color: rgb(153, 65, 17);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div {
+            text-align: center;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Iniciando os estudos DOM</h1>
+    <p id="paragraph">Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <p><strong>DOM = Document Object Model</strong></p>
+    <p>Clique para baixar:</p>
+    <div id="download">Download</div>
+    <script>
+        var d = window.document.getElementById('download')
+        download.style.color = 'red'
+        window.document.getElementById('h1').style.background = 'green'
+        var p = window.document.querySelector('p#paragraph')
+        p.style.color = 'black'
+    </script>
+</body>
+</html>
